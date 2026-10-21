@@ -1,0 +1,20 @@
+{
+	"profiles": {
+		"Terraria": {
+			"commandName": "Executable",
+			"executablePath": "$(TModLoaderDotNetPath)",
+			"commandLineArgs": "$(tMLPath)",
+			"workingDirectory": "$(tMLSteamPath)",
+			"environmentVariables": {
+				"DYLD_LIBRARY_PATH": "$(TModLoaderNativeLibraryPath)",
+				"VK_ICD_FILENAMES": "$(TModLoaderNativeLibraryPath)/MoltenVK_icd.json"
+			}
+		},
+		"TerrariaServer": {
+			"commandName": "Executable",
+			"executablePath": "$(DotNetName)",
+			"commandLineArgs": "$(tMLServerPath) -world \"C:\\Users\\CARY\\Documents\\My Games\\Terraria\\tModLoader\\Worlds\\骷髅的无望肖像.wld\" -players 4 -port 7777 -password \"\"",
+			"workingDirectory": "$(tMLSteamPath)"
+	    }
+	}
+}

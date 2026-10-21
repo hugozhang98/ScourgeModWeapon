@@ -1,0 +1,3 @@
+displayName = The Scourge - Display Weapon
+author = Hugo Zhang
+version = 0.1
