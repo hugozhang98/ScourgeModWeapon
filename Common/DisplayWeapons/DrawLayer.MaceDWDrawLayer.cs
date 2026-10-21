@@ -28,7 +28,16 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             PlayerDrawSet drawInfo,
             Player player,
             Item item
-        ) => new Vector2(8f, 9f);
+        )
+        {
+            Vector2 offset = new Vector2(-5f, 9f);
+            if (DWHelper.GetVanillaAnimationType(player) == DWVanillaAnimationType.Jumping)
+            {
+                offset += new Vector2(0f, -4f);
+            }
+
+            return offset;
+        }
 
         protected override float GetRotationOffset(Player player) => -55f;
 
