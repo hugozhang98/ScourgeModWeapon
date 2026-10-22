@@ -57,10 +57,22 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                 return false;
 
             // 特定武器在弹幕存活时不绘制
-            if (DWRegistry.HideWhenProjActive(item) && player.ownedProjectileCounts[item.shoot] > 0)
+            if (
+                ShouldHideWhenProjectileActive(item)
+                && player.ownedProjectileCounts[item.shoot] > 0
+            )
                 return false;
 
             return true;
+        }
+
+        public static bool ShouldHideWhenProjectileActive(Item item)
+        {
+            return (item.ModItem is IDW_Base { HideWhenProjActive: true })
+                || (
+                    DWVanillaAdjustments.TryGet(item, out DWAdjust adjust)
+                    && adjust.HideWhenProjActive
+                );
         }
 
         public static float GetMoveSway(

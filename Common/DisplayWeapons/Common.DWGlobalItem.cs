@@ -10,6 +10,11 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             base.HoldItemFrame(item, player);
 
+            if (!DWHelper.GetDefaultVisibility(player, item))
+            {
+                return;
+            }
+
             GreatSwordHoldItemFrame(item, player);
             GunHoldItemFrame(item, player);
             MiniGunHoldItemFrame(item, player);
@@ -24,7 +29,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void GreatSwordHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_GreatSword(item))
+            if (DWRegistry.IsDW_GreatSword(item))
             {
                 player.SetCompositeArmBack(
                     enabled: true,
@@ -36,7 +41,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void GunHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Gun(item))
+            if (DWRegistry.IsDW_Gun(item))
             {
                 float backArmRad = 45f;
                 float frontArmRad = 45f;
@@ -65,7 +70,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void MiniGunHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_MiniGun(item))
+            if (DWRegistry.IsDW_MiniGun(item))
             {
                 float backArmRad = 45f;
                 float frontArmRad = 70f;
@@ -94,7 +99,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void BowHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Bow(item))
+            if (DWRegistry.IsDW_Bow(item))
             {
                 float backArmRad = 45f;
                 float frontArmRad = 70f;
@@ -129,7 +134,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void CrossbowHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Crossbow(item))
+            if (DWRegistry.IsDW_Crossbow(item))
             {
                 float backArmRad = 45f;
                 float frontArmRad = 45f;
@@ -158,7 +163,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void RapierHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Rapier(item))
+            if (DWRegistry.IsDW_Rapier(item))
             {
                 if (DWHelper.GetVanillaAnimationType(player) != DWVanillaAnimationType.Idle)
                 {
@@ -181,7 +186,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void StickHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Stick(item))
+            if (DWRegistry.IsDW_Stick(item))
             {
                 float frontArmRad = -30f;
 
@@ -199,7 +204,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void SpearHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Spear(item))
+            if (DWRegistry.IsDW_Spear(item))
             {
                 if (DWHelper.GetVanillaAnimationType(player) == DWVanillaAnimationType.Idle)
                 {
@@ -245,7 +250,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void LanceHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Lance(item))
+            if (DWRegistry.IsDW_Lance(item))
             {
                 float backArmRad = 50f;
 
@@ -263,7 +268,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         private void StaffHoldItemFrame(Item item, Player player)
         {
-            if (DWHelper.GetDefaultVisibility(player, item) && DWRegistry.IsDW_Staff(item))
+            if (DWRegistry.IsDW_Staff(item))
             {
                 if (DWHelper.GetVanillaAnimationType(player) == DWVanillaAnimationType.Idle)
                 {
