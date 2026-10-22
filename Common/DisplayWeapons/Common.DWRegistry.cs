@@ -30,7 +30,11 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             return DWVanillaID_HideWhenProjActive.Contains(item.type)
                 || DWVanillaID_Sidearm.Contains(item.type)
-                || DWVanillaID_Trimarang.Contains(item.type);
+                || DWVanillaID_Trimarang.Contains(item.type)
+                || (
+                    item.ModItem is IDW_Base displayWeapon
+                    && displayWeapon.HideWhenProjectileActive
+                );
         }
     }
 

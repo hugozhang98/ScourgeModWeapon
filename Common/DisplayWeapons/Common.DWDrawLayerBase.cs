@@ -32,9 +32,11 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             Color lightColor = GetColor(drawInfo);
             float scale = GetScale(item);
 
+            ApplyOffset(effects, item, player, ref origin, ref position, ref rotation, ref scale);
+
             DrawData drawData = new DrawData(
                 texture,
-                position,
+                position.Floor(),
                 frame,
                 lightColor,
                 rotation,
@@ -79,7 +81,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
             position += DWHelper.GetUpperBodyBobbing(drawInfo);
 
-            return position.Floor();
+            return position;
         }
 
         protected virtual Vector2 GetPositionOffset(
@@ -107,5 +109,44 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             DWHelper.GetDefaultColor(drawInfo);
 
         protected virtual float GetScale(Item item) => 1f;
+
+        private void ApplyOffset(
+            SpriteEffects effects,
+            Item item,
+            Player player,
+            ref Vector2 origin,
+            ref Vector2 position,
+            ref float rotation,
+            ref float scale
+        )
+        {
+            if (item.ModItem is IDW_Base displayWeapon)
+            {
+                //原点偏移
+                Vector2 originOffset = displayWeapon.OriginOffset;
+
+                if ((effects & SpriteEffects.FlipHorizontally) != 0)
+                    originOffset.X = -originOffset.X;
+
+                if ((effects & SpriteEffects.FlipVertically) != 0)
+                    originOffset.Y = -originOffset.Y;
+
+                origin += originOffset;
+
+                //位置偏移
+                position += new Vector2(
+                    player.direction * displayWeapon.PositionOffset.X,
+                    player.gravDir * displayWeapon.PositionOffset.Y
+                );
+
+                //旋转偏移
+                rotation +=
+                    AngleHelper.DegToRad(player.direction * displayWeapon.RotationOffset)
+                    * player.gravDir;
+
+                //缩放偏移
+                scale += displayWeapon.ScaleOffset;
+            }
+        }
     }
 }

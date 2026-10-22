@@ -35,7 +35,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         }
 
         protected override Vector2 GetPosition(PlayerDrawSet drawInfo, Player player, Item item) =>
-            DWHelper.GetPlayerJointPosition(drawInfo, DWPlayerJointType.FrontHand).Floor();
+            DWHelper.GetPlayerJointPosition(drawInfo, DWPlayerJointType.FrontHand);
 
         protected override float GetRotationOffset(Player player)
         {

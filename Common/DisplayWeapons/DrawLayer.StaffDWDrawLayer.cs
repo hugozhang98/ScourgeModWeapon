@@ -44,9 +44,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             if (DWHelper.GetVanillaAnimationType(player) != DWVanillaAnimationType.Idle)
             {
-                return DWHelper
-                    .GetPlayerJointPosition(drawInfo, DWPlayerJointType.BackHand)
-                    .Floor();
+                return DWHelper.GetPlayerJointPosition(drawInfo, DWPlayerJointType.BackHand);
             }
 
             return base.GetPosition(drawInfo, player, item);
