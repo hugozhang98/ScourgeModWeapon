@@ -1,1 +1,11 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+[center][h1]The Scourge - Display Weapon[/h1][/center]
+
+为多种武器添加角色持握与展示效果，让装备外观更有表现力。
+
+[b]备注：[/b]本模组是 [i]The Scourge[/i] 的附属模组，但也支持单独安装和使用。
+
+[h1]Features[/h1]
+[list]
+[*]支持原版所有剑、弓、枪、法杖等多种武器类型
+[*]支持多人联机显示
+[/list]
