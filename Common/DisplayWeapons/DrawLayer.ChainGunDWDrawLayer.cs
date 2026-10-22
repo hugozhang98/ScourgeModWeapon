@@ -18,8 +18,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             Vector2 offset = new Vector2(-9f, -3f);
 
-            DWAdjust_Anchor.TryAdjustPosition(player, item, ref offset);
-
             return offset;
         }
 

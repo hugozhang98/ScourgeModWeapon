@@ -30,8 +30,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                 visibleFrame.Location.ToVector2()
                 + new Vector2(visibleFrame.Width * 0.33f, visibleFrame.Height * 0.3f);
 
-            DWAdjust_Megashark.TryAdjustOrigin(item, ref origin);
-
             return TextureHelper.ApplyFlipToOrigin(origin, frame, effects);
         }
 

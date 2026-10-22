@@ -8,7 +8,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         public Vector2 PositionOffset => Vector2.Zero;
         public float RotationOffset => 0f;
         public float ScaleOffset => 0f;
-        public bool HideWhenProjectileActive => false;
+        public bool HideWhenProjActive => false;
     }
 
     //链锤

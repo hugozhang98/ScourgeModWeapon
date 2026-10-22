@@ -42,12 +42,14 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         protected override Vector2 GetPosition(PlayerDrawSet drawInfo, Player player, Item item)
         {
+            Vector2 position = base.GetPosition(drawInfo, player, item);
+
             if (DWHelper.GetVanillaAnimationType(player) != DWVanillaAnimationType.Idle)
             {
-                return DWHelper.GetPlayerJointPosition(drawInfo, DWPlayerJointType.BackHand);
+                position = DWHelper.GetPlayerJointPosition(drawInfo, DWPlayerJointType.BackHand);
             }
 
-            return base.GetPosition(drawInfo, player, item);
+            return position;
         }
 
         protected override Vector2 GetPositionOffset(

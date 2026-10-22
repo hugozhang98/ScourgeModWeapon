@@ -51,8 +51,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                 position += new Vector2(0f, 27f);
             }
 
-            DWAdjust_TheRottedFork.TryAdjustPosition(player, ref position);
-
             return position;
         }
 

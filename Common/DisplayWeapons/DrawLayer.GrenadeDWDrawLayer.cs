@@ -55,9 +55,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             float defaultScale = 1f;
 
-            DWAdjust_FlyingKnife.TryAdjustScale(item, ref defaultScale);
-            DWAdjust_RottenEgg.TryAdjustScale(item, ref defaultScale);
-
             return defaultScale;
         }
     }

@@ -31,10 +31,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             return DWVanillaID_HideWhenProjActive.Contains(item.type)
                 || DWVanillaID_Sidearm.Contains(item.type)
                 || DWVanillaID_Trimarang.Contains(item.type)
-                || (
-                    item.ModItem is IDW_Base displayWeapon
-                    && displayWeapon.HideWhenProjectileActive
-                );
+                || (item.ModItem is IDW_Base displayWeapon && displayWeapon.HideWhenProjActive);
         }
     }
 
@@ -571,6 +568,8 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.RottenEgg, // 臭蛋
             ItemID.StarAnise, // 星形茴香
             ItemID.BoneDagger, // 骨投刀
+            ItemID.SharpTears, // 血荆棘
+            ItemID.WeatherPain, // 天候棒
         };
 
         public static bool IsDW_Grenade(Item item)
@@ -627,6 +626,49 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.SpectreStaff, // 幽灵法杖
             ItemID.StaffofEarth, // 大地法杖
             ItemID.ApprenticeStaffT3, // 双足翼龙怒气
+            ItemID.CrimsonRod, // 猩红魔杖
+            ItemID.IceRod, // 冰雪魔杖
+            ItemID.ClingerStaff, // 爬藤怪法杖
+            ItemID.NimbusRod, // 雨云魔杖
+            // ItemID.ClayPotMinion, // 黏土蓓蕾法杖
+            ItemID.BabyBirdStaff, // 雀杖
+            ItemID.SlimeStaff, // 史莱姆法杖
+            ItemID.FlinxStaff, // 小雪怪法杖
+            // ItemID.DeadCellsMushroomBoiSummonItem, // 蘑菇法杖
+            ItemID.HornetStaff, // 黄蜂法杖
+            ItemID.VampireFrogStaff, // 吸血鬼青蛙法杖
+            ItemID.ImpStaff, // 小鬼法杖
+            // ItemID.ForbiddenMinion, // 毁灭法杖
+            ItemID.Smolstar, // 刃杖
+            ItemID.SpiderStaff, // 蜘蛛法杖
+            ItemID.PirateStaff, // 海盗法杖
+            ItemID.SanguineStaff, // 血红法杖
+            ItemID.OpticStaff, // 魔眼法杖
+            ItemID.DeadlySphereStaff, // 致命球法杖
+            ItemID.PygmyStaff, // 矮人法杖
+            ItemID.RavenStaff, // 乌鸦法杖
+            ItemID.StormTigerStaff, // 沙漠虎杖
+            ItemID.TempestStaff, // 暴风雨法杖
+            ItemID.XenoStaff, // 外星法杖
+            ItemID.StardustCellStaff, // 星尘细胞法杖
+            ItemID.StardustDragonStaff, // 星尘之龙法杖
+            ItemID.DD2FlameburstTowerT1Popper, // 爆炸烈焰魔杖
+            ItemID.DD2ExplosiveTrapT1Popper, // 爆炸陷阱魔杖
+            // ItemID.DeadCellsBarnacleSummonItem, // 藤壶法杖
+            ItemID.QueenSpiderStaff, // 蜘蛛女王法杖
+            ItemID.StaffoftheFrostHydra, // 寒霜九头蛇法杖
+            ItemID.MoonlordTurretStaff, // 月亮传送门法杖
+            ItemID.RainbowCrystalStaff, // 七彩水晶法杖
+            ItemID.DD2LightningAuraT2Popper, // 闪电光环手杖
+            ItemID.DD2LightningAuraT3Popper, // 闪电光环法杖
+            ItemID.DD2FlameburstTowerT2Popper, // 爆炸烈焰手杖
+            ItemID.DD2FlameburstTowerT3Popper, // 爆炸烈焰法杖
+            ItemID.DD2ExplosiveTrapT2Popper, // 爆炸陷阱手杖
+            ItemID.DD2ExplosiveTrapT3Popper, // 爆炸陷阱法杖
+            ItemID.DD2BallistraTowerT2Popper, // 弩车手杖
+            ItemID.DD2BallistraTowerT3Popper, // 弩车法杖
+            ItemID.HoundiusShootius, // 眼球激光塔
+            ItemID.DD2BallistraTowerT1Popper, // 弩车魔杖
         };
 
         public static bool IsDW_Staff(Item item)
@@ -640,15 +682,14 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
     {
         public static readonly HashSet<int> DWVanillaID_Wand = new()
         {
+            ItemID.DD2LightningAuraT1Popper, // 闪电光环魔杖
             ItemID.WandofSparking, // 火花魔棒
             ItemID.WandofFrosting, // 结霜魔棒
             // ItemID.GlacierFang, // 冰川之牙 rrzz
             ItemID.Vilethorn, // 魔刺
-            ItemID.WeatherPain, // 天候棒
             ItemID.MagicMissile, // 魔法飞弹
             ItemID.FlowerofFire, // 火之花
             ItemID.Flamelash, // 烈焰火鞭
-            ItemID.CrystalSerpent, // 水晶蛇
             ItemID.FlowerofFrost, // 寒霜之花
             ItemID.CrystalVileShard, // 魔晶碎块
             ItemID.SoulDrain, // 夺命杖
@@ -657,6 +698,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.BatScepter, // 蝙蝠权杖
             ItemID.PrincessWeapon, // 共鸣权杖
             ItemID.Razorpine, // 剃刀松
+            ItemID.CrystalSerpent, // 水晶蛇
         };
 
         public static bool IsDW_Wand(Item item)
@@ -685,17 +727,12 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 // // 困难模式：魔棒
 
 // // 其他魔法武器
-// ItemID.CrimsonRod, // 猩红魔杖
 // ItemID.Petalstorm, // 神秘绽放
-// ItemID.IceRod, // 冰雪魔杖
 // ItemID.DeadCellsKillingDeck, // 致命牌组
-// ItemID.ClingerStaff, // 爬藤怪法杖
-// ItemID.NimbusRod, // 雨云魔杖
 // ItemID.MagicDagger, // 魔法飞刀
 // ItemID.MedusaHead, // 蛇发女妖头
 // ItemID.SpiritFlame, // 神灯烈焰
 // ItemID.ShadowFlameHexDoll, // 暗影焰妖娃
-// ItemID.SharpTears, // 血荆棘
 // ItemID.MagicalHarp, // 魔法竖琴
 // ItemID.ToxicFlask, // 毒气瓶
 // ItemID.FairyQueenMagicItem, // 夜光
@@ -721,54 +758,17 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 // ItemID.LunarFlareBook, // 月耀
 
 // // 仆从召唤武器
-// ItemID.ClayPotMinion, // 黏土蓓蕾法杖
-// ItemID.BabyBirdStaff, // 雀杖
-// ItemID.SlimeStaff, // 史莱姆法杖
-// ItemID.FlinxStaff, // 小雪怪法杖
+
 // ItemID.AbigailsFlower, // 阿比盖尔之花
 // ItemID.PalworldMinionCattiva, // 捣蛋猫
 // ItemID.PalworldMinionFoxsparks, // 火绒狐
-// ItemID.DeadCellsMushroomBoiSummonItem, // 蘑菇法杖
-// ItemID.HornetStaff, // 黄蜂法杖
-// ItemID.VampireFrogStaff, // 吸血鬼青蛙法杖
-// ItemID.ImpStaff, // 小鬼法杖
-// ItemID.ForbiddenMinion, // 毁灭法杖
-// ItemID.Smolstar, // 刃杖
-// ItemID.SpiderStaff, // 蜘蛛法杖
-// ItemID.PirateStaff, // 海盗法杖
-// ItemID.SanguineStaff, // 血红法杖
-// ItemID.OpticStaff, // 魔眼法杖
+
 // ItemID.PalworldMinionTrustyCattiva, // 可靠的捣蛋猫
 // ItemID.PalworldMinionTrustyFoxsparks, // 可靠的火绒狐
-// ItemID.DeadlySphereStaff, // 致命球法杖
-// ItemID.PygmyStaff, // 矮人法杖
-// ItemID.RavenStaff, // 乌鸦法杖
-// ItemID.StormTigerStaff, // 沙漠虎杖
-// ItemID.TempestStaff, // 暴风雨法杖
+
 // ItemID.EmpressBlade, // 泰拉棱镜
-// ItemID.XenoStaff, // 外星法杖
-// ItemID.StardustCellStaff, // 星尘细胞法杖
-// ItemID.StardustDragonStaff, // 星尘之龙法杖
 
 // // 哨兵召唤武器
-// ItemID.HoundiusShootius, // 眼球激光塔
-// ItemID.DD2LightningAuraT1Popper, // 闪电光环魔杖
-// ItemID.DD2FlameburstTowerT1Popper, // 爆炸烈焰魔杖
-// ItemID.DD2ExplosiveTrapT1Popper, // 爆炸陷阱魔杖
-// ItemID.DD2BallistraTowerT1Popper, // 弩车魔杖
-// ItemID.DeadCellsBarnacleSummonItem, // 藤壶法杖
-// ItemID.QueenSpiderStaff, // 蜘蛛女王法杖
-// ItemID.StaffoftheFrostHydra, // 寒霜九头蛇法杖
-// ItemID.MoonlordTurretStaff, // 月亮传送门法杖
-// ItemID.RainbowCrystalStaff, // 七彩水晶法杖
-// ItemID.DD2LightningAuraT2Popper, // 闪电光环手杖
-// ItemID.DD2LightningAuraT3Popper, // 闪电光环法杖
-// ItemID.DD2FlameburstTowerT2Popper, // 爆炸烈焰手杖
-// ItemID.DD2FlameburstTowerT3Popper, // 爆炸烈焰法杖
-// ItemID.DD2ExplosiveTrapT2Popper, // 爆炸陷阱手杖
-// ItemID.DD2ExplosiveTrapT3Popper, // 爆炸陷阱法杖
-// ItemID.DD2BallistraTowerT2Popper, // 弩车手杖
-// ItemID.DD2BallistraTowerT3Popper, // 弩车法杖
 
 // // 鞭
 // ItemID.CobWhip, // 蛛网鞭

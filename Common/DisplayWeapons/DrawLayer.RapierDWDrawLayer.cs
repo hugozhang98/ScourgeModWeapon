@@ -47,9 +47,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             float scale = 1f;
 
-            DWAdjust_SolarEruption.TryAdjustScale(item, ref scale);
-            DWAdjust_PiercingStarlight.TryAdjustScale(item, ref scale);
-
             return scale;
         }
     }

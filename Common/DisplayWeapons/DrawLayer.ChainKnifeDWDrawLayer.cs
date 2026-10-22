@@ -41,8 +41,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             Vector2 offset = new Vector2(0f, 18f);
 
-            DWAdjust_ChainGuillotines.TryAdjustPosition(player, item, ref offset);
-
             return offset;
         }
 
@@ -51,8 +49,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         protected override float GetScale(Item item)
         {
             float defaultScale = 1f;
-
-            DWAdjust_ChainGuillotines.TryAdjustScale(item, ref defaultScale);
 
             return defaultScale;
         }

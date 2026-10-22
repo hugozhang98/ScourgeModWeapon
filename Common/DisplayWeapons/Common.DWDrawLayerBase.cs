@@ -120,33 +120,47 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ref float scale
         )
         {
+            DWAdjust adjust;
+
             if (item.ModItem is IDW_Base displayWeapon)
             {
-                //原点偏移
-                Vector2 originOffset = displayWeapon.OriginOffset;
-
-                if ((effects & SpriteEffects.FlipHorizontally) != 0)
-                    originOffset.X = -originOffset.X;
-
-                if ((effects & SpriteEffects.FlipVertically) != 0)
-                    originOffset.Y = -originOffset.Y;
-
-                origin += originOffset;
-
-                //位置偏移
-                position += new Vector2(
-                    player.direction * displayWeapon.PositionOffset.X,
-                    player.gravDir * displayWeapon.PositionOffset.Y
-                );
-
-                //旋转偏移
-                rotation +=
-                    AngleHelper.DegToRad(player.direction * displayWeapon.RotationOffset)
-                    * player.gravDir;
-
-                //缩放偏移
-                scale += displayWeapon.ScaleOffset;
+                adjust = new DWAdjust
+                {
+                    PositionOffset = displayWeapon.PositionOffset,
+                    OriginOffset = displayWeapon.OriginOffset,
+                    RotationOffset = displayWeapon.RotationOffset,
+                    ScaleOffset = displayWeapon.ScaleOffset,
+                };
             }
+            else if (DWVanillaAdjustments.TryGet(item, out adjust)) { }
+            else
+            {
+                return;
+            }
+
+            //原点偏移
+            Vector2 originOffset = adjust.OriginOffset;
+
+            if ((effects & SpriteEffects.FlipHorizontally) != 0)
+                originOffset.X = -originOffset.X;
+
+            if ((effects & SpriteEffects.FlipVertically) != 0)
+                originOffset.Y = -originOffset.Y;
+
+            origin += originOffset;
+
+            //位置偏移
+            position += new Vector2(
+                player.direction * adjust.PositionOffset.X,
+                player.gravDir * adjust.PositionOffset.Y
+            );
+
+            //旋转偏移
+            rotation +=
+                AngleHelper.DegToRad(player.direction * adjust.RotationOffset) * player.gravDir;
+
+            //缩放偏移
+            scale += adjust.ScaleOffset;
         }
     }
 }

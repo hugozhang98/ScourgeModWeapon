@@ -52,7 +52,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         protected override float GetScale(Item item)
         {
             float scale = 1f;
-            DWAdjust_MolotovCocktail.TryAdjustScale(item, ref scale);
+
             return scale;
         }
     }

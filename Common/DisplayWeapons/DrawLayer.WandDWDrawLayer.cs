@@ -58,10 +58,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         protected override float GetScale(Item item)
         {
-            float defaultScale = 1f;
-
-            DWAdjust_WeatherPain.TryAdjustScale(item, ref defaultScale);
-            DWAdjust_Razorpine.TryAdjustScale(item, ref defaultScale);
+            float defaultScale = 0.9f;
 
             return defaultScale;
         }
