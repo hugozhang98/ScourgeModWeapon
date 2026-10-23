@@ -467,6 +467,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.BladedGlove, //利刃手套
             ItemID.FetidBaghnakhs, //臭虎爪
             ItemID.AleThrowingGlove, //麦芽酒投掷器
+            ItemID.NebulaBlaze, // 星云烈焰
         };
 
         public static bool IsDW_Glove(Item item)
@@ -538,6 +539,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.BoneDagger, // 骨投刀
             ItemID.SharpTears, // 血荆棘
             ItemID.WeatherPain, // 天候棒
+            ItemID.ToxicFlask, // 毒气瓶
         };
 
         public static bool IsDW_Grenade(Item item)
@@ -674,6 +676,24 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             return item.ModItem is IDW_Wand || DWVanillaID_Wand.Contains(item.type);
         }
     }
+
+    //魔法饰品
+    public static partial class DWRegistry
+    {
+        public static readonly HashSet<int> DWVanillaID_MagicAccessory = new()
+        {
+            // ItemID.Petalstorm, // 神秘绽放
+            ItemID.SpiritFlame, // 神灯烈焰
+            ItemID.LastPrism, // 终极棱镜
+            ItemID.ShadowFlameHexDoll, // 暗影焰妖娃
+        };
+
+        public static bool IsDW_MagicAccessory(Item item)
+        {
+            return item.ModItem is IDW_MagicAccessory
+                || DWVanillaID_MagicAccessory.Contains(item.type);
+        }
+    }
 }
 
 //------自带待机动画，不需要显示
@@ -685,6 +705,8 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 //ItemID.Umbrella,
 // ItemID.CombatWrench, //战斗扳手
 // ItemID.BouncingShield, //中士联盾
+// ItemID.FairyQueenMagicItem, // 夜光
+// ItemID.NebulaArcanum, // 星云奥秘
 
 // ItemID.VampireKnives, //吸血鬼刀
 
@@ -695,20 +717,11 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 // // 困难模式：魔棒
 
 // // 其他魔法武器
-// ItemID.Petalstorm, // 神秘绽放
 // ItemID.DeadCellsKillingDeck, // 致命牌组
-// ItemID.MagicDagger, // 魔法飞刀
 // ItemID.MedusaHead, // 蛇发女妖头
-// ItemID.SpiritFlame, // 神灯烈焰
-// ItemID.ShadowFlameHexDoll, // 暗影焰妖娃
 // ItemID.MagicalHarp, // 魔法竖琴
-// ItemID.ToxicFlask, // 毒气瓶
-// ItemID.FairyQueenMagicItem, // 夜光
 // ItemID.SparkleGuitar, // 星星吉他
 // ItemID.ArcSurge, // 电弧涌动
-// ItemID.NebulaArcanum, // 星云奥秘
-// ItemID.NebulaBlaze, // 星云烈焰
-// ItemID.LastPrism, // 终极棱镜
 
 // // 魔法枪
 

@@ -20,6 +20,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         protected sealed override void Draw(ref PlayerDrawSet drawInfo)
         {
+            if (!PreDraw(drawInfo))
+                return;
+
             Player player = drawInfo.drawPlayer;
             Item item = DWHelper.GetDisplayItem(player);
             Texture2D texture = TextureAssets.Item[item.type].Value;
@@ -34,9 +37,11 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
             ApplyOffset(effects, item, player, ref origin, ref position, ref rotation, ref scale);
 
+            Vector2 positionFinal = IsPositionFloor ? position.Floor() : position;
+
             DrawData drawData = new DrawData(
                 texture,
-                position.Floor(),
+                positionFinal,
                 frame,
                 lightColor,
                 rotation,
@@ -109,6 +114,10 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             DWHelper.GetDefaultColor(drawInfo);
 
         protected virtual float GetScale(Item item) => 1f;
+
+        protected virtual bool IsPositionFloor => true;
+
+        protected virtual bool PreDraw(PlayerDrawSet drawInfo) => true;
 
         private void ApplyOffset(
             SpriteEffects effects,

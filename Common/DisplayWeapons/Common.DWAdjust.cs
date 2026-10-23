@@ -36,11 +36,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                 ScaleOffset = -0.2f,
             },
             [ItemID.TheRottedFork] = new() { PositionOffset = new Vector2(-4f, 0f) },
-            [ItemID.FlyingKnife] = new()
-            {
-                ScaleOffset = -0.2f,
-                HideWhenProjActive = true,
-            },
+            [ItemID.FlyingKnife] = new() { ScaleOffset = -0.2f, HideWhenProjActive = true },
             [ItemID.RottenEgg] = new() { ScaleOffset = -0.2f },
             [ItemID.MolotovCocktail] = new() { ScaleOffset = -0.2f },
             [ItemID.SolarEruption] = new() { ScaleOffset = -0.2f },
@@ -59,6 +55,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             [ItemID.LightDisc] = new() { HideWhenProjActive = true },
             [ItemID.PaladinsHammer] = new() { HideWhenProjActive = true },
             [ItemID.Trimarang] = new() { HideWhenProjActive = true },
+            [ItemID.SpiritFlame] = new() { ScaleOffset = 0.2f },
         };
 
         public static bool TryGet(Item item, out DWAdjust adjust) =>
