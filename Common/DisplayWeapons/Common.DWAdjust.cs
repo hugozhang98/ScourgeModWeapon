@@ -30,11 +30,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                 PositionOffset = new Vector2(6f, 4f),
                 HideWhenProjActive = true,
             },
-            [ItemID.ChainGuillotines] = new()
-            {
-                PositionOffset = new Vector2(0f, 5f),
-                ScaleOffset = -0.2f,
-            },
+            [ItemID.ChainGuillotines] = new() { ScaleOffset = -0.2f },
             [ItemID.TheRottedFork] = new() { PositionOffset = new Vector2(-4f, 0f) },
             [ItemID.FlyingKnife] = new() { ScaleOffset = -0.2f, HideWhenProjActive = true },
             [ItemID.RottenEgg] = new() { ScaleOffset = -0.2f },
