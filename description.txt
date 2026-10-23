@@ -1,4 +1,4 @@
-[center][h1]The Scourge - Display Weapon[/h1][/center]
+[h1]The Scourge - Display Weapon[/h1]
 
 为多种武器添加角色持握与展示效果，让装备外观更有表现力。
 
