@@ -56,12 +56,20 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             if (GetVanillaAnimationType(player) == DWVanillaAnimationType.Other)
                 return false;
 
-            // 特定武器在弹幕存活时不绘制
-            if (
-                ShouldHideWhenProjectileActive(item)
-                && player.ownedProjectileCounts[item.shoot] > 0
-            )
-                return false;
+            // 自定义物品可能启用了隐藏选项，却没有有效的弹幕类型。
+            if (ShouldHideWhenProjectileActive(item))
+            {
+                int projectileType = item.shoot;
+                int[] projectileCounts = player.ownedProjectileCounts;
+
+                if (
+                    projectileCounts is not null
+                    && projectileType >= 0
+                    && projectileType < projectileCounts.Length
+                    && projectileCounts[projectileType] > 0
+                )
+                    return false;
+            }
 
             return true;
         }

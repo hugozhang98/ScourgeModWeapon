@@ -10,7 +10,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         const ulong cycleTicks = 180UL;
         const ulong halfCycleTicks = cycleTicks / 2;
 
-        private float clock;
+        private float cycleFrame;
 
         public override Position GetDefaultPosition()
         {
@@ -37,7 +37,8 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         protected override bool PreDraw(PlayerDrawSet drawInfo)
         {
-            clock = MathHelper.Lerp(0f, 1f, ProcessHelper.Loop(Main.GameUpdateCount, cycleTicks));
+            // 先用整数取模，避免运行时间很长时 GameUpdateCount 转 float 丢失低位。
+            cycleFrame = (float)(Main.GameUpdateCount % cycleTicks);
 
             return true;
         }
@@ -48,9 +49,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                 DWHelper.GetPlayerJointPosition(drawInfo, DWPlayerJointType.Body)
                 + new Vector2(0, 3f);
 
-            float angle = MathHelper.TwoPi * clock;
+            float angle = MathHelper.TwoPi * cycleFrame / (float)cycleTicks;
 
-            float Swing = ProcessHelper.Swing(Main.GameUpdateCount, cycleTicks / 3f);
+            float Swing = ProcessHelper.Swing(cycleFrame, cycleTicks / 3f);
 
             Vector2 offset =
                 ShapeHelper.GetEllipse(position, 24f, 3f, angle) + new Vector2(0, Swing * 2f);
@@ -63,7 +64,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             const float minScale = 0.5f;
             const float maxScale = 0.6f;
 
-            float progress = ProcessHelper.BackAndForth(Main.GameUpdateCount, cycleTicks, 0.25f);
+            float progress = ProcessHelper.BackAndForth(cycleFrame, cycleTicks, 0.25f);
 
             return MathHelper.Lerp(minScale, maxScale, progress);
         }
