@@ -76,4 +76,10 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
     //魔法饰品
     public interface IDW_MagicAccessory : IDW_Base { }
+
+    //书
+    public interface IDW_Book : IDW_Base { }
+
+    //鞭
+    public interface IDW_Whip : IDW_Base { }
 }

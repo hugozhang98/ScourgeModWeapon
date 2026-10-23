@@ -56,6 +56,10 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             [ItemID.PaladinsHammer] = new() { HideWhenProjActive = true },
             [ItemID.Trimarang] = new() { HideWhenProjActive = true },
             [ItemID.SpiritFlame] = new() { ScaleOffset = 0.2f },
+            [ItemID.ObsidianSwordfish] = new() { PositionOffset = new Vector2(0f, 4f) },
+            [ItemID.Swordfish] = new() { PositionOffset = new Vector2(0f, 4f) },
+            [ItemID.VampireKnives] = new() { ScaleOffset = -0.4f },
+            [ItemID.CrimsonRod] = new() { ScaleOffset = -0.2f },
         };
 
         public static bool TryGet(Item item, out DWAdjust adjust) =>

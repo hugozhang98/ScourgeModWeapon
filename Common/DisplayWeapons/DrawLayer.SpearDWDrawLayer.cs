@@ -68,6 +68,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         protected override float GetWeaponSway(Player player) => 2f;
 
-        protected override float GetScale(Item item) => 1.2f;
+        protected override float GetScale(Item item) => 1f;
     }
 }

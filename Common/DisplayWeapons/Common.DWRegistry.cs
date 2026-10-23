@@ -186,7 +186,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.Harpoon, //鱼叉枪
             ItemID.StarCannon, //星星炮
             ItemID.Blowgun, //吹箭筒
-            //ItemID.DeadCellsBarrelLauncher,   //木桶发射器 rrzz
             ItemID.Toxikarp, //毒弹枪
             ItemID.DartPistol, //飞镖手枪
             ItemID.DartRifle, //飞镖步枪
@@ -360,8 +359,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.TentacleSpike, //触手钉锤
             ItemID.StylistKilLaKillScissorsIWish, //时尚剪刀
             ItemID.BatBat, //蝙蝠棍
-            //燧石
-            //ItemID.DeadCellsFlint, rrzz
         };
 
         public static bool IsDW_Stick(Item item)
@@ -375,9 +372,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
     {
         public static readonly HashSet<int> DWVanillaID_Spear = new()
         {
-            //史莱姆长矛
-            //ItemID.SlimeSpear, rrzz
-
             ItemID.Spear, //长矛
             ItemID.Trident, //三叉戟
             ItemID.ThunderSpear, //风暴长矛
@@ -449,6 +443,8 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.PlatinumBroadsword, //铂金宽剑
             ItemID.PearlwoodSword, //珍珠木剑
             ItemID.PsychoKnife, //变态人的刀
+            ItemID.EmpressBlade, // 泰拉棱镜
+
             //真铜短剑
             // ItemID.TrueCopperShortsword,
         };
@@ -468,6 +464,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.FetidBaghnakhs, //臭虎爪
             ItemID.AleThrowingGlove, //麦芽酒投掷器
             ItemID.NebulaBlaze, // 星云烈焰
+            // ItemID.ArcSurge, // 电弧涌动
         };
 
         public static bool IsDW_Glove(Item item)
@@ -488,7 +485,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.Shroomerang, //蘑菇回旋镖
             ItemID.IceBoomerang, //冰雪回旋镖
             ItemID.ThornChakram, //荆棘旋刃
-            // ItemID.Axearang, //斧头回旋镖 rrzz
             ItemID.Flamarang, //烈焰回旋镖
             ItemID.Bananarang, //香蕉回旋镖
             ItemID.PossessedHatchet, //疯狂飞斧
@@ -539,7 +535,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.BoneDagger, // 骨投刀
             ItemID.SharpTears, // 血荆棘
             ItemID.WeatherPain, // 天候棒
-            ItemID.ToxicFlask, // 毒气瓶
         };
 
         public static bool IsDW_Grenade(Item item)
@@ -559,6 +554,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.FrostDaggerfish, // 寒霜飞鱼
             ItemID.Javelin, // 标枪
             ItemID.BoneJavelin, // 骨头标枪
+            ItemID.ToxicFlask, // 毒气瓶
         };
 
         public static bool IsDW_Javelin(Item item)
@@ -572,7 +568,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
     {
         public static readonly HashSet<int> DWVanillaID_Staff = new()
         {
-            // ItemID.DaybloomStaff, // 太阳花法杖 rrzz
             ItemID.ThunderStaff, // 雷霆法杖
             ItemID.AmethystStaff, // 紫晶法杖
             ItemID.TopazStaff, // 黄玉法杖
@@ -596,7 +591,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.SpectreStaff, // 幽灵法杖
             ItemID.StaffofEarth, // 大地法杖
             ItemID.ApprenticeStaffT3, // 双足翼龙怒气
-            ItemID.CrimsonRod, // 猩红魔杖
             ItemID.IceRod, // 冰雪魔杖
             ItemID.ClingerStaff, // 爬藤怪法杖
             ItemID.NimbusRod, // 雨云魔杖
@@ -622,8 +616,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.XenoStaff, // 外星法杖
             ItemID.StardustCellStaff, // 星尘细胞法杖
             ItemID.StardustDragonStaff, // 星尘之龙法杖
-            ItemID.DD2FlameburstTowerT1Popper, // 爆炸烈焰魔杖
-            ItemID.DD2ExplosiveTrapT1Popper, // 爆炸陷阱魔杖
             // ItemID.DeadCellsBarnacleSummonItem, // 藤壶法杖
             ItemID.QueenSpiderStaff, // 蜘蛛女王法杖
             ItemID.StaffoftheFrostHydra, // 寒霜九头蛇法杖
@@ -638,7 +630,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.DD2BallistraTowerT2Popper, // 弩车手杖
             ItemID.DD2BallistraTowerT3Popper, // 弩车法杖
             ItemID.HoundiusShootius, // 眼球激光塔
-            ItemID.DD2BallistraTowerT1Popper, // 弩车魔杖
         };
 
         public static bool IsDW_Staff(Item item)
@@ -655,7 +646,6 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.DD2LightningAuraT1Popper, // 闪电光环魔杖
             ItemID.WandofSparking, // 火花魔棒
             ItemID.WandofFrosting, // 结霜魔棒
-            // ItemID.GlacierFang, // 冰川之牙 rrzz
             ItemID.Vilethorn, // 魔刺
             ItemID.MagicMissile, // 魔法飞弹
             ItemID.FlowerofFire, // 火之花
@@ -663,12 +653,15 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.FlowerofFrost, // 寒霜之花
             ItemID.CrystalVileShard, // 魔晶碎块
             ItemID.SoulDrain, // 夺命杖
-            // ItemID.LightningStrike, // 闪电之击 rrzz
             ItemID.RainbowRod, // 彩虹魔杖
             ItemID.BatScepter, // 蝙蝠权杖
             ItemID.PrincessWeapon, // 共鸣权杖
             ItemID.Razorpine, // 剃刀松
             ItemID.CrystalSerpent, // 水晶蛇
+            ItemID.CrimsonRod, // 猩红魔杖
+            ItemID.DD2BallistraTowerT1Popper, // 弩车魔杖
+            ItemID.DD2FlameburstTowerT1Popper, // 爆炸烈焰魔杖
+            ItemID.DD2ExplosiveTrapT1Popper, // 爆炸陷阱魔杖
         };
 
         public static bool IsDW_Wand(Item item)
@@ -686,6 +679,8 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             ItemID.SpiritFlame, // 神灯烈焰
             ItemID.LastPrism, // 终极棱镜
             ItemID.ShadowFlameHexDoll, // 暗影焰妖娃
+            ItemID.AbigailsFlower, // 阿比盖尔之花
+            ItemID.MedusaHead, // 蛇发女妖头
         };
 
         public static bool IsDW_MagicAccessory(Item item)
@@ -694,79 +689,83 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                 || DWVanillaID_MagicAccessory.Contains(item.type);
         }
     }
+
+    //书
+    public static partial class DWRegistry
+    {
+        public static readonly HashSet<int> DWVanillaID_Book = new()
+        {
+            ItemID.WaterBolt, // 水矢
+            ItemID.BookofSkulls, // 骷髅头法书
+            ItemID.DemonScythe, // 恶魔之镰
+            ItemID.CursedFlames, // 诅咒焰
+            ItemID.GoldenShower, // 黄金雨
+            ItemID.CrystalStorm, // 水晶风暴
+            ItemID.MagnetSphere, // 磁球
+            ItemID.RazorbladeTyphoon, // 利刃台风
+            ItemID.LunarFlareBook, // 月耀
+        };
+
+        public static bool IsDW_Book(Item item)
+        {
+            return item.ModItem is IDW_Book || DWVanillaID_Book.Contains(item.type);
+        }
+    }
+
+    //鞭
+    public static partial class DWRegistry
+    {
+        public static readonly HashSet<int> DWVanillaID_Whip = new()
+        {
+            // ItemID.CobWhip, // 蛛网鞭
+            // ItemID.SlimeWhip, // 史莱姆鞭
+            ItemID.BlandWhip, // 皮鞭
+            // ItemID.CorruptWhip, // 魂笞
+            // ItemID.CrimsonWhip, // 脉鞭
+            // ItemID.MeteorWhip, // 星坠
+            ItemID.ThornWhip, // 荆鞭
+            ItemID.BoneWhip, // 脊柱骨鞭
+            ItemID.FireWhip, // 鞭炮
+            ItemID.CoolWhip, // 冷鞭
+            ItemID.SwordWhip, // 迪朗达尔
+            // ItemID.FlowerWhip, // 花儿的粗鄙展示
+            ItemID.ScytheWhip, // 暗黑收割
+            ItemID.MaceWhip, // 晨星
+            // ItemID.EelWhip, // 电鳗
+            // ItemID.ConstellationWhip, // 星座
+            ItemID.RainbowWhip, // 万花筒
+            // ItemID.MoonLordWhip, // 艾瑞之鞭
+        };
+
+        public static bool IsDW_Whip(Item item)
+        {
+            return item.ModItem is IDW_Whip || DWVanillaID_Whip.Contains(item.type);
+        }
+    }
 }
 
-//------自带待机动画，不需要显示
-//芦苇呼吸管
-// ItemID.BreathingReed,
-////悲剧雨伞
-//ItemID.TragicUmbrella,
-//    //伞
-//ItemID.Umbrella,
+//自带待机动画，不需要显示/==============================================================================
+// ItemID.BreathingReed,//芦苇呼吸管
+//ItemID.TragicUmbrella,//悲剧雨伞
+//ItemID.Umbrella,  //伞
 // ItemID.CombatWrench, //战斗扳手
 // ItemID.BouncingShield, //中士联盾
 // ItemID.FairyQueenMagicItem, // 夜光
 // ItemID.NebulaArcanum, // 星云奥秘
-
-// ItemID.VampireKnives, //吸血鬼刀
-
-// 手榴弹与投掷物
-
-// // 困难模式前：魔棒
-
-// // 困难模式：魔棒
-
-// // 其他魔法武器
-// ItemID.DeadCellsKillingDeck, // 致命牌组
-// ItemID.MedusaHead, // 蛇发女妖头
-// ItemID.MagicalHarp, // 魔法竖琴
 // ItemID.SparkleGuitar, // 星星吉他
-// ItemID.ArcSurge, // 电弧涌动
-
-// // 魔法枪
-
+// ItemID.MagicalHarp, // 魔法竖琴
+//还未接入==============================================================================
+// ItemID.VampireKnives, //吸血鬼刀
+// ItemID.DeadCellsKillingDeck, // 致命牌组
 // ItemID.ChargedBlasterCannon, // 充能爆破炮
-
-// // 法术书
-// ItemID.WaterBolt, // 水矢
-// ItemID.BookofSkulls, // 骷髅头法书
-// ItemID.DemonScythe, // 恶魔之镰
-// ItemID.CursedFlames, // 诅咒焰
-// ItemID.GoldenShower, // 黄金雨
-// ItemID.CrystalStorm, // 水晶风暴
-// ItemID.MagnetSphere, // 磁球
-// ItemID.RazorbladeTyphoon, // 利刃台风
-// ItemID.LunarFlareBook, // 月耀
-
-// // 仆从召唤武器
-
-// ItemID.AbigailsFlower, // 阿比盖尔之花
 // ItemID.PalworldMinionCattiva, // 捣蛋猫
 // ItemID.PalworldMinionFoxsparks, // 火绒狐
-
 // ItemID.PalworldMinionTrustyCattiva, // 可靠的捣蛋猫
 // ItemID.PalworldMinionTrustyFoxsparks, // 可靠的火绒狐
-
-// ItemID.EmpressBlade, // 泰拉棱镜
-
-// // 哨兵召唤武器
-
-// // 鞭
-// ItemID.CobWhip, // 蛛网鞭
-// ItemID.SlimeWhip, // 史莱姆鞭
-// ItemID.BlandWhip, // 皮鞭
-// ItemID.CorruptWhip, // 魂笞
-// ItemID.CrimsonWhip, // 脉鞭
-// ItemID.MeteorWhip, // 星坠
-// ItemID.ThornWhip, // 荆鞭
-// ItemID.BoneWhip, // 脊柱骨鞭
-// ItemID.FireWhip, // 鞭炮
-// ItemID.CoolWhip, // 冷鞭
-// ItemID.SwordWhip, // 迪朗达尔
-// ItemID.FlowerWhip, // 花儿的粗鄙展示
-// ItemID.ScytheWhip, // 暗黑收割
-// ItemID.MaceWhip, // 晨星
-// ItemID.EelWhip, // 电鳗
-// ItemID.ConstellationWhip, // 星座
-// ItemID.RainbowWhip, // 万花筒
-// ItemID.MoonLordWhip, // 艾瑞之鞭
+//ItemID.DeadCellsBarrelLauncher,   //木桶发射器
+//ItemID.DeadCellsFlint,   //燧石
+// ItemID.Axearang, //斧头回旋镖
+// ItemID.DaybloomStaff, // 太阳花法杖
+//ItemID.SlimeSpear,  //史莱姆长矛
+// ItemID.GlacierFang, // 冰川之牙
+// ItemID.LightningStrike, // 闪电之击

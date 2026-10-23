@@ -136,8 +136,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
             DWPlayerJointType jointType
         )
         {
-            // FrontHand 使用 Player.HandPosition：这是原版计算出的实际主手位置，
-            // 而不是仅用于特效附着的 OffsetsPlayerOnhand 原始坐标。
+            // FrontHand 以原版 HandPosition 为基准，再修正走路帧中的异常掌心偏移。
             // 若素材的握持点不在贴图中心，可在此添加小幅的额外校正。
             Vector2 _frontHandPalmOffset = Vector2.Zero;
 
@@ -263,9 +262,21 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             Player player = drawInfo.drawPlayer;
 
-            // HandPosition 内部使用 OffsetsPlayerOnhand * 2，并处理身体帧、跳跃、
+            // HandPosition 内部使用 OffsetsPlayerOnhand * 2，并处理身体帧、
             // 重力、台阶偏移和完整旋转；直接使用可避免手动换算时遗漏缩放。
             Vector2 handPosition = player.HandPosition.GetValueOrDefault(player.Center);
+
+            // 原版第 16 帧的 Onhand.Y 为 12，相邻走路帧分别为 16 和 17。
+            // HandPosition 会将表值乘 2，导致展示物在这一帧突然上跳约 9 像素。
+            // 用相邻帧的均值补平该帧，并按原版 HandPosition 的方式旋转修正量。
+            if (GetBodyFrameIndex(player) == 16)
+            {
+                float smoothY =
+                    (Main.OffsetsPlayerOnhand[15].Y + Main.OffsetsPlayerOnhand[17].Y) * 0.5f;
+                float correctionY =
+                    (smoothY - Main.OffsetsPlayerOnhand[16].Y) * 2f * player.gravDir;
+                handPosition += new Vector2(0f, correctionY).RotatedBy(player.fullRotation);
+            }
 
             palmOffset.X *= player.direction;
             palmOffset.Y *= player.gravDir;
