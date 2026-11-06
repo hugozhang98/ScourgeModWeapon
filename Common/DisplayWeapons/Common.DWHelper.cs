@@ -78,7 +78,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         {
             return (item.ModItem is IDW_Base { HideWhenProjActive: true })
                 || (
-                    DWVanillaAdjustments.TryGet(item, out DWAdjust adjust)
+                    DWRegistry.TryGetAdjust(item, out DWAdjust adjust)
                     && adjust.HideWhenProjActive
                 );
         }

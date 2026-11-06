@@ -23,7 +23,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Mace(Item item)
         {
-            return item.ModItem is IDW_Mace || DWVanillaID_Mace.Contains(item.type);
+            return item.ModItem is IDW_Mace
+                || DWVanillaID_Mace.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Mace);
         }
     }
 
@@ -38,7 +40,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_ChainKnife(Item item)
         {
-            return item.ModItem is IDW_ChainKnife || DWVanillaID_ChainKnife.Contains(item.type);
+            return item.ModItem is IDW_ChainKnife
+                || DWVanillaID_ChainKnife.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.ChainKnife);
         }
     }
 
@@ -54,7 +58,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_ChainGun(Item item)
         {
-            return item.ModItem is IDW_ChainGun || DWVanillaID_ChainGun.Contains(item.type);
+            return item.ModItem is IDW_ChainGun
+                || DWVanillaID_ChainGun.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.ChainGun);
         }
     }
 
@@ -88,7 +94,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Yoyo(Item item)
         {
-            return item.ModItem is IDW_Yoyo || DWVanillaID_Yoyo.Contains(item.type);
+            return item.ModItem is IDW_Yoyo
+                || DWVanillaID_Yoyo.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Yoyo);
         }
     }
 
@@ -143,7 +151,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_GreatSword(Item item)
         {
-            return item.ModItem is IDW_GreatSword || DWVanillaID_GreatSword.Contains(item.type);
+            return item.ModItem is IDW_GreatSword
+                || DWVanillaID_GreatSword.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.GreatSword);
         }
     }
 
@@ -206,7 +216,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Gun(Item item)
         {
-            return item.ModItem is IDW_Gun || DWVanillaID_Gun.Contains(item.type);
+            return item.ModItem is IDW_Gun
+                || DWVanillaID_Gun.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Gun);
         }
     }
 
@@ -230,7 +242,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_MiniGun(Item item)
         {
-            return item.ModItem is IDW_MiniGun || DWVanillaID_MiniGun.Contains(item.type);
+            return item.ModItem is IDW_MiniGun
+                || DWVanillaID_MiniGun.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.MiniGun);
         }
     }
 
@@ -275,7 +289,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Bow(Item item)
         {
-            return item.ModItem is IDW_Bow || DWVanillaID_Bow.Contains(item.type);
+            return item.ModItem is IDW_Bow
+                || DWVanillaID_Bow.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Bow);
         }
     }
 
@@ -297,7 +313,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Crossbow(Item item)
         {
-            return item.ModItem is IDW_Crossbow || DWVanillaID_Crossbow.Contains(item.type);
+            return item.ModItem is IDW_Crossbow
+                || DWVanillaID_Crossbow.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Crossbow);
         }
     }
 
@@ -342,7 +360,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Rapier(Item item)
         {
-            return item.ModItem is IDW_Rapier || DWVanillaID_Rapier.Contains(item.type);
+            return item.ModItem is IDW_Rapier
+                || DWVanillaID_Rapier.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Rapier);
         }
     }
 
@@ -363,7 +383,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Stick(Item item)
         {
-            return item.ModItem is IDW_Stick || DWVanillaID_Stick.Contains(item.type);
+            return item.ModItem is IDW_Stick
+                || DWVanillaID_Stick.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Stick);
         }
     }
 
@@ -398,7 +420,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Spear(Item item)
         {
-            return item.ModItem is IDW_Spear || DWVanillaID_Spear.Contains(item.type);
+            return item.ModItem is IDW_Spear
+                || DWVanillaID_Spear.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Spear);
         }
     }
 
@@ -414,7 +438,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Lance(Item item)
         {
-            return item.ModItem is IDW_Lance || DWVanillaID_Lance.Contains(item.type);
+            return item.ModItem is IDW_Lance
+                || DWVanillaID_Lance.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Lance);
         }
     }
 
@@ -451,7 +477,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Sword(Item item)
         {
-            return item.ModItem is IDW_Sword || DWVanillaID_Sword.Contains(item.type);
+            return item.ModItem is IDW_Sword
+                || DWVanillaID_Sword.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Sword);
         }
     }
 
@@ -469,7 +497,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Glove(Item item)
         {
-            return item.ModItem is IDW_Glove || DWVanillaID_Glove.Contains(item.type);
+            return item.ModItem is IDW_Glove
+                || DWVanillaID_Glove.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Glove);
         }
     }
 
@@ -494,7 +524,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Sidearm(Item item)
         {
-            return item.ModItem is IDW_Sidearm || DWVanillaID_Sidearm.Contains(item.type);
+            return item.ModItem is IDW_Sidearm
+                || DWVanillaID_Sidearm.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Sidearm);
         }
     }
 
@@ -508,7 +540,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Trimarang(Item item)
         {
-            return item.ModItem is IDW_Trimarang || DWVanillaID_Trimarang.Contains(item.type);
+            return item.ModItem is IDW_Trimarang
+                || DWVanillaID_Trimarang.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Trimarang);
         }
     }
 
@@ -539,7 +573,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Grenade(Item item)
         {
-            return item.ModItem is IDW_Grenade || DWVanillaID_Grenade.Contains(item.type);
+            return item.ModItem is IDW_Grenade
+                || DWVanillaID_Grenade.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Grenade);
         }
     }
 
@@ -559,7 +595,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Javelin(Item item)
         {
-            return item.ModItem is IDW_Javelin || DWVanillaID_Javelin.Contains(item.type);
+            return item.ModItem is IDW_Javelin
+                || DWVanillaID_Javelin.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Javelin);
         }
     }
 
@@ -634,7 +672,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Staff(Item item)
         {
-            return item.ModItem is IDW_Staff || DWVanillaID_Staff.Contains(item.type);
+            return item.ModItem is IDW_Staff
+                || DWVanillaID_Staff.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Staff);
         }
     }
 
@@ -666,7 +706,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Wand(Item item)
         {
-            return item.ModItem is IDW_Wand || DWVanillaID_Wand.Contains(item.type);
+            return item.ModItem is IDW_Wand
+                || DWVanillaID_Wand.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Wand);
         }
     }
 
@@ -686,7 +728,8 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
         public static bool IsDW_MagicAccessory(Item item)
         {
             return item.ModItem is IDW_MagicAccessory
-                || DWVanillaID_MagicAccessory.Contains(item.type);
+                || DWVanillaID_MagicAccessory.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.MagicAccessory);
         }
     }
 
@@ -708,7 +751,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Book(Item item)
         {
-            return item.ModItem is IDW_Book || DWVanillaID_Book.Contains(item.type);
+            return item.ModItem is IDW_Book
+                || DWVanillaID_Book.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Book);
         }
     }
 
@@ -739,7 +784,9 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
 
         public static bool IsDW_Whip(Item item)
         {
-            return item.ModItem is IDW_Whip || DWVanillaID_Whip.Contains(item.type);
+            return item.ModItem is IDW_Whip
+                || DWVanillaID_Whip.Contains(item.type)
+                || IsRegisteredAs(item, DWWeaponDisplayType.Whip);
         }
     }
 }

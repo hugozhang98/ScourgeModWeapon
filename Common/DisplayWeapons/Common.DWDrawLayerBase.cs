@@ -141,7 +141,7 @@ namespace ScourgeModWeapon.Common.DisplayWeapons
                     ScaleOffset = displayWeapon.ScaleOffset,
                 };
             }
-            else if (DWVanillaAdjustments.TryGet(item, out adjust)) { }
+            else if (DWRegistry.TryGetAdjust(item, out adjust)) { }
             else
             {
                 return;
